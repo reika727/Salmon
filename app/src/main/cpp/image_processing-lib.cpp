@@ -27,7 +27,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_example_salmon_ImageProcessor_differe
         image_utility::image_accessor_YUV_420_888 ia(env, image);
         image_utility::surface_texture_accessor_R8G8B8X8 sa(env, surface_texture);
         image_utility::coordinate_transformer ct(ia, sa, is_landscape);
-#pragma omp parallel for default(none) shared(ia, sa, ct)
+#pragma omp parallel for default(none) shared(ia, sa, ct) collapse(2)
         for (int y = 0; y < ia.get_height(); ++y) {
             for (int x = 0; x < ia.get_width(); ++x) {
                 auto c = ct(x, y);
@@ -54,7 +54,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_example_salmon_ImageProcessor_prewitt
         image_utility::image_accessor_YUV_420_888 ia(env, image);
         image_utility::surface_texture_accessor_R8G8B8X8 sa(env, surface_texture);
         image_utility::coordinate_transformer ct(ia, sa, is_landscape);
-#pragma omp parallel for default(none) shared(ia, sa, ct)
+#pragma omp parallel for default(none) shared(ia, sa, ct) collapse(2)
         for (int y = 0; y < ia.get_height(); ++y) {
             for (int x = 0; x < ia.get_width(); ++x) {
                 auto c = ct(x, y);
@@ -83,7 +83,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_example_salmon_ImageProcessor_sobelFi
         image_utility::image_accessor_YUV_420_888 ia(env, image);
         image_utility::surface_texture_accessor_R8G8B8X8 sa(env, surface_texture);
         image_utility::coordinate_transformer ct(ia, sa, is_landscape);
-#pragma omp parallel for default(none) shared(ia, sa, ct)
+#pragma omp parallel for default(none) shared(ia, sa, ct) collapse(2)
         for (int y = 0; y < ia.get_height(); ++y) {
             for (int x = 0; x < ia.get_width(); ++x) {
                 auto c = ct(x, y);
@@ -112,7 +112,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_example_salmon_ImageProcessor_laplaci
         image_utility::image_accessor_YUV_420_888 ia(env, image);
         image_utility::surface_texture_accessor_R8G8B8X8 sa(env, surface_texture);
         image_utility::coordinate_transformer ct(ia, sa, is_landscape);
-#pragma omp parallel for default(none) shared(ia, sa, ct)
+#pragma omp parallel for default(none) shared(ia, sa, ct) collapse(2)
         for (int y = 0; y < ia.get_height(); ++y) {
             for (int x = 0; x < ia.get_width(); ++x) {
                 auto c = ct(x, y);
@@ -137,7 +137,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_example_salmon_ImageProcessor_negativ
         image_utility::image_accessor_YUV_420_888 ia(env, image);
         image_utility::surface_texture_accessor_R8G8B8X8 sa(env, surface_texture);
         image_utility::coordinate_transformer ct(ia, sa, is_landscape);
-#pragma omp parallel for default(none) shared(ia, sa, ct)
+#pragma omp parallel for default(none) shared(ia, sa, ct) collapse(2)
         for (int y = 0; y < ia.get_height(); ++y) {
             for (int x = 0; x < ia.get_width(); ++x) {
                 auto rgb = image_utility::YUV_to_RGB::convert(
@@ -165,7 +165,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_example_salmon_ImageProcessor_pseudoC
         image_utility::image_accessor_YUV_420_888 ia(env, image);
         image_utility::surface_texture_accessor_R8G8B8X8 sa(env, surface_texture);
         image_utility::coordinate_transformer ct(ia, sa, is_landscape);
-#pragma omp parallel for default(none) shared(ia, sa, ct)
+#pragma omp parallel for default(none) shared(ia, sa, ct) collapse(2)
         for (int y = 0; y < ia.get_height(); ++y) {
             for (int x = 0; x < ia.get_width(); ++x) {
                 int luminance = ia(x, y, YUV::Y);
@@ -189,7 +189,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_example_salmon_ImageProcessor_noFilte
         image_utility::image_accessor_YUV_420_888 ia(env, image);
         image_utility::surface_texture_accessor_R8G8B8X8 sa(env, surface_texture);
         image_utility::coordinate_transformer ct(ia, sa, is_landscape);
-#pragma omp parallel for default(none) shared(ia, sa, ct)
+#pragma omp parallel for default(none) shared(ia, sa, ct) collapse(2)
         for (int y = 0; y < ia.get_height(); ++y) {
             for (int x = 0; x < ia.get_width(); ++x) {
                 auto rgb = image_utility::YUV_to_RGB::convert(
