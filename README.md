@@ -6,7 +6,6 @@
   <p lang="ja" dir="ltr">
     更なる改造を加えていく<br>
     手始めに輪郭抽出
-    <a href="https://t.co/SIg6xwjzOy">https://t.co/SIg6xwjzOy</a>
     <a href="https://t.co/VmRFEdvSyD">pic.twitter.com/VmRFEdvSyD</a>
   </p>
   &mdash; れい (@REIK727)
@@ -18,7 +17,6 @@
   <p lang="ja" dir="ltr">
     一年ごしに改良した<br>
     ヌルヌル動くようになった
-    <a href="https://t.co/gjlpydKWBR">https://t.co/gjlpydKWBR</a>
     <a href="https://t.co/qbJWRnp3WC">pic.twitter.com/qbJWRnp3WC</a>
   </p>
   &mdash; れい (@REIK727)
